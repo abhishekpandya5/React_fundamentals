@@ -1,0 +1,66 @@
+npm used to manage packages.
+why do we use?
+becoz we need lot of packages, minified, bundler, refactoring, 
+react app powered by lot of things and they are comes under npm.
+==================================
+
+dev dependency?
+all the pckges my proj need
+==================================
+
+package-lock.json file?
+
+^ & ~ auto updates the package
+caret ^2.8.2   changes minor version .2
+tilde ~2.8.2   only changes major version i.e., 3.
+
+it shows the locked version and keep it safe and 
+is very imp fiile
+it locks the version
+never put it in the .gitignore
+
+maintains the exact version  and hash of it that it is the same version in production also. Maintain the intgreity.
+
+to avoid uncertainities
+
+=====================================
+node_modules folder:
+database for the npm
+parcel will use a minifier to minify the code
+minifier needs some other packages. so collectively all the files are stored under node_modules folder.
+
+called as helper funcions / helper code
+
+package-lock.json files helps to generate the node modules folder on the server this is why we will never push the node modules to git.
+======================================
+
+npx: execute using npm
+
+npx parcel index.html  (here index.html is a entry point)
+
+created development build and host to our server and creates parcel-cache folder
+
+npx parcel build index.html (to make production build)
+
+========================================
+
+
+module can import type=module
+==========================================
+
+HMR: Hot Module Replacement
+
+parcel is using this to reload the page
+how it knows: there is something known as file watcher algorithm - written in C++
+
+==========================================
+
+anything which we can generate on server, we can put it in .gitignore
+
+=============================================
+Transitive dependency: dependencies using one another dependency.
+we have packg managers that handles our Transitive dependency
+
+============================================
+
+JSX is html like syntax not html inside js
