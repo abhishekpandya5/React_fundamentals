@@ -1,14 +1,19 @@
+# `Learning React fundamentals`
+
 <details>
 <summary><h1>Chapter 01 - Inception</h1></summary>
 
 ## 1. What is Emmet?
+
 > Emmet is a set of plug-ins for text editors that allow for high-speed coding and editing in HTML, XML, XSLT, and other structured code formats via content assist.
->> Emmet is a free add-on for your text editor. It allows you to type shortcuts that are then expanded into full pieces of code. By using Emmet, developers type less, they save both on keystrokes and time.`
+>
+> > Emmet is a free add-on for your text editor. It allows you to type shortcuts that are then expanded into full pieces of code. By using Emmet, developers type less, they save both on keystrokes and time.`
 
 ---
 
 ## 2. Difference between a Library and Framework?
-### Library: 
+
+### Library:
 
 - `A Library is a set of code that was previously written by a developer that you can call when you are building your project.`
 
@@ -46,17 +51,47 @@
 
 ## 3. What is CDN? Why do we use it?
 
-> A `content delivery network` (CDN) is a group of geographically distributed servers that speed up the delivery of web content by bringing it closer to where users are. Data centers across the globe use caching, a process that temporarily stores copies of files, so that you can access internet content from a web-enabled device or browser more quickly through a server near you. 
+> A `content delivery network` (CDN) is a group of geographically distributed servers that speed up the delivery of web content by bringing it closer to where users are. Data centers across the globe use caching, a process that temporarily stores copies of files, so that you can access internet content from a web-enabled device or browser more quickly through a server near you.
+
 ---
+
 ## 4. Why is React known as React?
+
 ---
+
 ## 5. What is crossorigin in script tag?
+
 ---
+
 ## 6. What is diference between React and ReactDOM?
+
 ---
+
 ## 7. What is difference between react.development.js and react.production.js files via CDN?
+
 ---
+
 ## 8. What is async and defer?
+
+---
+
+</details>
+
+<details>
+<summary>
+<h1>Chapter 02 - Igniting our App</h1>
+</summary>
+
+## 1. What is `NPM`?
+
+> NPM is a package management tool. It has no specific full form but generally we call it Node Package Manager. As our project need a lot of resources to create, build, optimize and deploy to the server, for these we need different packages and tools which can be installed and imported from npm repositories.
+
+> It alows to track package versions and updates with time.
+
+---
+
+## 2. What is `Parcel/Webpack`? Why do we need it?
+
 ---
 
 </details>

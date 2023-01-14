@@ -1,0 +1,35 @@
+1. JSX can only have 1 parent.
+2. react Fragment is a component. It is like a empty tag.
+
+React.Fragment inside React.Fragment ? is it possible
+
+config driven UI
+
+If u know the basics u never be defeated
+
+
+a representation of a DOM is known as Virtial DOM.
+
+Reconciliation:
+to diff one tree from another using diff algorithm.
+ finds out the diff btw tress
+only re render the specific portion of the app which is found by the diff algorithm
+
+
+react fiber - new reconciliation engine
+
+never use index as a key
+
+==================================
+
+1. import { Title } from "./component/Header"; this is not object destructuring and a way to extract Title component from Header component.
+
+But we can do like this,
+import * as obj from "./component/Header";
+then we can use this as,
+<obj.Title/> 
+Same way React.Fragment is defined in React.
+
+2. React uses one way data binding. two way data binding makes the code unpredictable and hard to optimize as well.
+
+3. Every component in react maintains a state. Whenever we have to use a local variable in a component we use state.
