@@ -22,7 +22,8 @@
 	"homepage": "https://github.com/abhishekpandya5/React_fundamentals#readme",
 	"dependencies": {
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-loading-skeleton": "^3.1.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
