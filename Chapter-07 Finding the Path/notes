@@ -1,0 +1,27 @@
+if no depedency array then useEffect will be called after each render as it is not depend on anything
+
+never create componenet inside another component
+
+never write useState inside if condition because it leads to inconsistency
+and also in for loop
+
+React gives us useState to create local state variable inside functional component. Don't create it outside. 
+
+We can create any no. of useEffect
+
+createBrowserRouter is a function, takes some configurations
+
+ReactProvider
+
+2 Types of  routing:
+
+Client side routing
+Server side routing
+
+All the childrens will go into outlet acc. to the router
+Outlet is placeholder
+
+
+
+
+

@@ -1,0 +1,14 @@
+Class based components have a mandatory render method. 
+render() method returns some JSX. 
+
+why we write super(props) in constructor?
+
+we do not mutate state directly.
+
+There are two phases:
+1. render phase 
+2. commit phase
+
+research topic - 
+why super props constructor?
+why can i make componentDidMount async and not useEffect?
