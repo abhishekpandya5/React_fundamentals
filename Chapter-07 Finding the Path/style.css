@@ -1,0 +1,81 @@
+.layout {
+	font-family: 'DM Sans', sans-serif;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 10px;
+}
+
+.nav-items > ul {
+	list-style-type: none;
+	display: flex;
+	color: #3b2727;
+}
+
+.nav-items > ul > li {
+	padding: 10px;
+}
+
+.logo {
+	width: 55px;
+}
+
+.search-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+	margin: 15px 0 28px;
+}
+
+.search-input {
+	border-radius: 35px;
+	border: 0;
+	box-shadow: 5px 5px 10px #c7c7c7, -5px -5px 10px #f9f9f9;
+	width: 400px;
+	padding: 5px 10px;
+	height: 28px;
+	outline: 0;
+}
+
+.search-btn {
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 10px 15px;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+.card {
+	width: 200px;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 6px;
+	box-shadow: 1px 1px 10px #c7c7c7, -5px -5px 10px #f9f9f9;
+}
+
+.card > img {
+	width: 100%;
+}
+
+.restaurant-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+}
+
+body::-webkit-scrollbar {
+	width: 0.6em;
+}
+
+body::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(10, 10, 10, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgb(204, 193, 193);
+	border-radius: 10px;
+}

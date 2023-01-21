@@ -1,0 +1,27 @@
+<!-- Code updated in Chapter-03 folder -->
+
+Why React is fast?
+
+-->React uses virtual DOM. It is a representation of actual DOM.
+
+-->React uses something known as Reconciliation where we have Diff Algorithm which find out the difference btw the trees and render only the element which is required. 
+
+-->All these happens using a key attribute in the JSX.
+
+--> Tree is virtaul representation of a DOM
+
+--> React Fiber - new reconciliation engine, it came in react 16
+this new reconciliation engine is responsible for diff.
+
+--> The algorithm React uses to diff one tree with another to determine which parts need to be changed.
+
+---------------------------------------
+
+Using index as a key is not remommended. Check below link:
+https://reactjs.org/docs/lists-and-keys.html#:~:text=We%20don't%20recommend%20using,cause%20issues%20with%20component%20state.
+
+
+If childrens are different, then we don't need a key. it will identify by different tags
+
+For same childrens, we need a key.
+no key (not recommended) <<<<<<  index key (last option) <<<<<< unique key (best practice)

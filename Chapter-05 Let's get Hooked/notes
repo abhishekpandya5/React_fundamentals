@@ -1,0 +1,12 @@
+1. import { Title } from "./component/Header"; 
+this is not object destructuring but only a way to extract Title component from Header component.
+
+But we can do like this,
+import * as obj from "./component/Header";
+then we can use this as,
+<obj.Title/> 
+Same way React.Fragment is defined in React.
+
+2. React uses one way data binding. Two way data binding makes the code unpredictable and hard to optimize as well.
+
+3. Every component in React maintains a state. Whenever we have to use a local variable in a component we use state.
