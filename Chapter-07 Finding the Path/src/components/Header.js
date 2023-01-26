@@ -1,28 +1,35 @@
+import Logo from '../../assets/img/logo1.png';
+import { Link } from 'react-router-dom';
+
 const Title = () => (
-  <a href="/">
-    <img
-      className="logo"
-      alt="logo"
-      src="https://yt3.ggpht.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-    />
-  </a>
+	<Link to="/">
+		<img className="logo" alt="logo" src={Logo} />
+	</Link>
 );
 
 const Header = () => {
-  return (
-    <div className="header">
-      <Title />
+	return (
+		<div className="header">
+			<Title />
 
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
+			<div className="nav-items">
+				<ul>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
+					<li>
+						<Link to="/about">About</Link>
+					</li>
+					<li>
+						<Link to="/contact">Contact</Link>
+					</li>
+					<li>
+						<Link to="/">Cart</Link>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
 };
 
 export default Header;
