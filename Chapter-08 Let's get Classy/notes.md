@@ -40,7 +40,61 @@ When we make a api call inisde `componentDidMount`, our DOM is already mounted a
 
 ---
 
+`componentWillUnmount()` is invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+
+---
 
 ### Research topic -
 ### why super props constructor?
+---
 ### Why can i make componentDidMount async and not useEffect?
+~  useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called.
+
+---
+
+ ❌ Don't do this!
+
+useEffect(async () => {
+  const users = await fetchUsers();
+  setUsers(users);
+
+  return () => {
+    // this never gets called, hello memory leaks...
+  };
+}, []);
+
+
+> We should use an async function inside the useEffect hook. There are two patterns you could use, an `immediately-invoked function expression` (my preferred approach), or a `named function` that you invoke. Let’s compare, and you can decide what you prefer.
+
+
+// 🆗 
+useEffect(() => {
+  (async () => {
+    const users = await fetchUsers();
+    setUsers(users);
+  })();
+
+  return () => {
+    // this now gets called when the component unmounts
+  };
+}, []);
+
+### Or you can go for a named function:
+
+// 🆗 
+useEffect(() => {
+  const getUsers = async () => {
+    const users = await fetchUsers();
+    setUsers(users);
+  };
+
+  getUsers(); // run it, run it
+
+  return () => {
+    // this now gets called when the component unmounts
+  };
+}, []);
+
+
+> Either way, we’re now safe to use async functions inside useEffect hooks. Now if/when you want to return a cleanup function, it will get called and we also keep useEffect nice and clean and free from race conditions.
+
