@@ -1,24 +1,22 @@
-Class based components have a mandatory render method.
+> Class based components have a mandatory render method.
+
+
+> We cannot create class component without a render method.
 
 ---
-We cannot create class component without a render method.
-
----
-What is render method? 
+> What is render method? 
 render() method returns some JSX.
 ---
-why we write super(props) in constructor?
+> we do not mutate state directly.
 ---
-we do not mutate state directly.
----
-Why we make api calls inside componentDidMount or useEffect?
-Because first we render the dummy dom and then update the UI based on data. As componentDidMount calls after the first render
+### Why we make api calls inside componentDidMount or useEffect?
+> Because first we render the dummy dom and then update the UI based on data. As componentDidMount calls after the first render
 
 ---
 
 ## React Life Cycle Methods:
-### First parent lifecycle starts with parent constructor then parent render and on render if child encounters then child's life cycle starts first.
-So, child constructor then child render then child componentDidMount (to complete the child's lifecycle first) and then parent componentDidMount.
+> First parent lifecycle starts with parent constructor then parent render and on render if child encounters then child's life cycle starts first.
+>> So, child constructor then child render then child componentDidMount (to complete the child's lifecycle first) and then parent componentDidMount.
 
 
 ---
@@ -54,7 +52,7 @@ When we make a api call inisde `componentDidMount`, our DOM is already mounted a
 > useEffect hook expects a cleanup function returned from it which is called when the component unmounts. Using an async function here will cause a bug as the cleanup function will never get called.
 
 ---
-
+```
  ❌ Don't do this!
 
 useEffect(async () => {
@@ -65,7 +63,7 @@ useEffect(async () => {
     // this never gets called, hello memory leaks...
   };
 }, []);
-
+```
 
 > We should use an async function inside the useEffect hook. There are two patterns you could use, an `immediately-invoked function expression` (my preferred approach), or a `named function` that you invoke. Let’s compare, and you can decide what you prefer.
 
