@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
 import Footer from './components/Footer';
-import About from './components/About';
+// import About from './components/About';
 import Error from './components/Error';
 import Contact from './components/Contact';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/Profile';
+
+const About = lazy(() => import('./components/About'));
 
 const App = () => (
 	<div className="layout">
@@ -29,8 +31,12 @@ const appRouter = createBrowserRouter([
 				element: <Body />
 			},
 			{
-				path: '/about',  // "/" means from the route, we can also write "about" also
-				element: <About />,
+				path: '/about', // "/" means from the route, we can also write "about" also
+				element: (
+					<Suspense fallback={<h1>Loading...</h1>}>
+						<About />
+					</Suspense>
+				),
 				children: [
 					{
 						path: 'profile', // parentPath/{path}
@@ -43,7 +49,7 @@ const appRouter = createBrowserRouter([
 				element: <Contact />
 			},
 			{
-				path: '/restaurant/:id',
+				path: '/restaurant/:resId',
 				element: <RestaurantMenu />
 			}
 		]

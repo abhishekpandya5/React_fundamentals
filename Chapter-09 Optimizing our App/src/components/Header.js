@@ -1,16 +1,17 @@
-import Logo from '../../assets/img/logo1.png';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-const Title = () => (
-	<Link to="/">
-		<img className="logo" alt="logo" src={Logo} />
-	</Link>
-);
+import useNetwork from '../utils/useNetwork';
+import Logo from '../../assets/img/logo1.png';
 
 const Header = () => {
+	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const isOnline = useNetwork();
+	
 	return (
 		<div className="header">
-			<Title />
+			<Link to="/">
+				<img className="logo" alt="logo" src={Logo} />
+			</Link>
 
 			<div className="nav-items">
 				<ul>
@@ -27,6 +28,12 @@ const Header = () => {
 						<Link to="/">Cart</Link>
 					</li>
 				</ul>
+				<div>{isOnline ? 'Online' : 'Offline'}</div>
+				{isLoggedIn ? (
+					<button onClick={() => setIsLoggedIn(false)}>Logout</button>
+				) : (
+					<button onClick={() => setIsLoggedIn(true)}>Login</button>
+				)}
 			</div>
 		</div>
 	);

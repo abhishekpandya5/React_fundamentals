@@ -3,20 +3,14 @@ import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-function filterData(searchText, restaurants) {
-	const filterData = restaurants.filter((restaurant) =>
-		restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-	);
-	return filterData;
-}
+import { filterData } from '../utils/helper';
+import useNetwork from '../utils/useNetwork';
 
 const Body = () => {
 	const [allRestaurants, setAllRestaurants] = useState([]);
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const [searchText, setSearchText] = useState('');
-
-	// console.log(useState());
+	const isOnline = useNetwork();
 
 	useEffect(() => {
 		getResturantsData();
@@ -25,8 +19,9 @@ const Body = () => {
 	async function getResturantsData() {
 		const data = await fetch(API_URL);
 		const json = await data.json();
-		setAllRestaurants(json?.data?.cards?.[2]?.data?.data?.cards);
-		setFilteredRestaurants(json?.data?.cards?.[2]?.data?.data?.cards);
+		const actualData = json?.data?.cards?.[2]?.data?.data?.cards;
+		setAllRestaurants(actualData);
+		setFilteredRestaurants(actualData);
 	}
 
 	function onInputChange(e) {
@@ -41,6 +36,10 @@ const Body = () => {
 		if (searchText.trim().length === 0) return;
 		const data = filterData(searchText, allRestaurants);
 		setFilteredRestaurants(data);
+	}
+
+	if(!isOnline) {
+		return <h1>No internet connection</h1>
 	}
 
 	return (

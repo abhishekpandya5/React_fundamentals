@@ -1,7 +1,9 @@
 const Footer = () => {
-  return (
-  <h4>Footer</h4>
-  );
+	return (
+		<div style={{ height: '100px', background: '#333030' }}>
+			<h4 style={{color: "#fff"}}>Footer</h4>
+		</div>
+	);
 };
 
 export default Footer;
