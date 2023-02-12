@@ -1,0 +1,59 @@
+UI Layer and Data Layer
+
+UI layer  - everything we see on the browser (made using JSX)
+ and Data Layer
+
+JSX we write converts into big plane javascript object using Babel.
+Babel converts JSX into javascript and then convert into objects (virtual DOM) for Reconciliation.
+Two Virtual dom compares and a node which is changed only renders in the real DOM.
+Diff is calculated and that diff is synced with the real DOM.
+
+This whole UI layer is powered by the Data layer.
+
+What does data layer consist of?
+Data is manintained within the application using state and props.
+
+There are more things along with State and Props.
+
+State vs Props:
+
+State: A local variable which has only scope within a component.
+Props: If we have to pass data from one component to another then we use props.
+
+PROPS DRILLING  passing data from parent to child and then to other child (chaining)
+only upto 2 or 3 levels, props drilling is ok.
+makes code cluttered.
+re-renders all component in which props are passed.
+
+Lifting the state Up:
+
+taking control out of children and give to the parent to maintain a state and controls each and every child.
+
+
+
+
+How to pass data from child to Parent?
+1. use our custom hook
+
+
+
+State and props: they are tied to a component
+
+context is like h useState for all the components
+
+
+--------------------------------------------
+Redux tootlkit:
+
+We save all data in the form of slices in the redux store
+A slice is portion of a redux store.
+
+a component cannot update store directly. It need to dispatch a action.
+
+
+when we click on a plus button, it disptaches an action then it calls the reducer function and then reducer function will update the slice of the redux store.
+
+Selector:
+If we want to read from store, we use Selector
+
+When we use Selector, we are subscribing to the store.
