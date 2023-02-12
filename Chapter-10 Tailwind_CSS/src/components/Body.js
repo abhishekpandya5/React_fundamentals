@@ -43,25 +43,25 @@ const Body = () => {
 	}
 
 	return (
-		<>
-			<form className="search-container">
+		<section>
+			<form className="search-container my-5 bg-blue-200">
 				<input
 					type="text"
-					className="search-input"
+					className="search-input px-4 py-1 m-2 border-blue-300 outline-none shadow-sm rounded"
 					placeholder="Search"
 					value={searchText}
 					onChange={onInputChange}
 				/>
 				<button
 					type="submit"
-					className="search-btn"
+					className="search-btn px-4 py-1 m-2 border-solid border-2 border-blue-300 rounded"
 					onClick={handleSearchSubmit}
 				>
 					Search
 				</button>
 			</form>
 
-			<div className="restaurant-list">
+			<div className="restaurant-list flex justify-around flex-wrap">
 				{allRestaurants?.length === 0 ? (
 					Array(15)
 						.fill('')
@@ -71,7 +71,7 @@ const Body = () => {
 				) : (
 					filteredRestaurants?.map((restaurant) => {
 						return (
-							<Link
+							<Link className=''
 								to={`/restaurant/${restaurant.data.id}`}
 								key={restaurant.data.id}
 							>
@@ -81,7 +81,7 @@ const Body = () => {
 					})
 				)}
 			</div>
-		</>
+		</section>
 	);
 };
 

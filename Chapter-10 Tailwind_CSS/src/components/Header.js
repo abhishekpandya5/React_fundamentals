@@ -8,13 +8,13 @@ const Header = () => {
 	const isOnline = useNetwork();
 	
 	return (
-		<div className="header">
-			<Link to="/">
-				<img className="logo" alt="logo" src={Logo} />
+		<header className="flex justify-between items-center">
+			<Link to="/" className='w-28'>
+				<img alt="logo" src={Logo} />
 			</Link>
 
-			<div className="nav-items">
-				<ul>
+			<div className="nav-items flex justify-evenly gap-6">
+				<ul className='flex justify-between gap-6'>
 					<li>
 						<Link to="/">Home</Link>
 					</li>
@@ -28,14 +28,14 @@ const Header = () => {
 						<Link to="/">Cart</Link>
 					</li>
 				</ul>
-				<div>{isOnline ? 'Online' : 'Offline'}</div>
+				<div className='cursor-pointer'>{isOnline ? 'Online' : 'Offline'}</div>
 				{isLoggedIn ? (
 					<button onClick={() => setIsLoggedIn(false)}>Logout</button>
 				) : (
 					<button onClick={() => setIsLoggedIn(true)}>Login</button>
 				)}
 			</div>
-		</div>
+		</header>
 	);
 };
 
