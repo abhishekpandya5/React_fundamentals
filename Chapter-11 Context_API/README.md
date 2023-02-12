@@ -41,19 +41,3 @@ State and props: they are tied to a component
 
 context is like h useState for all the components
 
-
---------------------------------------------
-Redux tootlkit:
-
-We save all data in the form of slices in the redux store
-A slice is portion of a redux store.
-
-a component cannot update store directly. It need to dispatch a action.
-
-
-when we click on a plus button, it disptaches an action then it calls the reducer function and then reducer function will update the slice of the redux store.
-
-Selector:
-If we want to read from store, we use Selector
-
-When we use Selector, we are subscribing to the store.
