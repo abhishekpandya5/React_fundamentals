@@ -1,16 +1,18 @@
 import { API_URL } from '../constant';
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { filterData } from '../utils/helper';
 import useNetwork from '../utils/useNetwork';
+import UserContext from '../utils/userContext';
 
 const Body = () => {
 	const [allRestaurants, setAllRestaurants] = useState([]);
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const [searchText, setSearchText] = useState('');
 	const isOnline = useNetwork();
+	const { user, setUser } = useContext(UserContext);
 
 	useEffect(() => {
 		getResturantsData();
@@ -38,8 +40,8 @@ const Body = () => {
 		setFilteredRestaurants(data);
 	}
 
-	if(!isOnline) {
-		return <h1>No internet connection</h1>
+	if (!isOnline) {
+		return <h1>No internet connection</h1>;
 	}
 
 	return (
@@ -59,8 +61,29 @@ const Body = () => {
 				>
 					Search
 				</button>
+				<input
+					className="px-4 py-1 m-2 border-blue-300 outline-none shadow-sm rounded"
+					type="text"
+					value={user.name}
+					onChange={(e) =>
+						setUser({
+							...user,
+							name: e.target.value
+						})
+					}
+				/>
+				<input
+					className="px-4 py-1 m-2 border-blue-300 outline-none shadow-sm rounded"
+					type="text"
+					value={user.email}
+					onChange={(e) =>
+						setUser({
+							...user,
+							email: e.target.value
+						})
+					}
+				/>
 			</form>
-
 			<div className="restaurant-list flex justify-around flex-wrap">
 				{allRestaurants?.length === 0 ? (
 					Array(15)
@@ -71,7 +94,8 @@ const Body = () => {
 				) : (
 					filteredRestaurants?.map((restaurant) => {
 						return (
-							<Link className=''
+							<Link
+								className=""
 								to={`/restaurant/${restaurant.data.id}`}
 								key={restaurant.data.id}
 							>

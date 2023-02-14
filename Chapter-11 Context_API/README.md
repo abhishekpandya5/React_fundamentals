@@ -39,5 +39,5 @@ How to pass data from child to Parent?
 
 State and props: they are tied to a component
 
-context is like h useState for all the components
+context is like h global useState for all the components
 

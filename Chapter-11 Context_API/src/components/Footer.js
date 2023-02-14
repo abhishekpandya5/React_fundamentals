@@ -1,7 +1,13 @@
+import { useContext } from 'react';
+import UserContext from '../utils/userContext';
+
 const Footer = () => {
+	const { user } = useContext(UserContext);
 	return (
-		<footer style={{ height: '100px', background: '#333030' }}>
-			<h4 style={{color: "#fff"}}>Footer</h4>
+		<footer className="flex justify-center" style={{ background: '#333030' }}>
+			<h4 className="text-white">
+				This site is developed by {user.name} - {user.email}
+			</h4>
 		</footer>
 	);
 };

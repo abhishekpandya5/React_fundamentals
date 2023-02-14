@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Outlet } from 'react-router-dom';
 import ProfileClassComponent from './ProfileClass';
 import ProfileFunctionalComponent from './Profile';
+import UserContext from '../utils/userContext';
 
 class About extends Component {
 	constructor(props) {
@@ -23,6 +24,11 @@ class About extends Component {
 			<div>
 				<h1>About Us Page</h1>
 				<p>This is the About page</p>
+
+				<UserContext.Consumer>
+					{({user}) => <h4 className='font-bold text-3xl'>{user.name} - {user.email}</h4>}
+				</UserContext.Consumer>
+				
 				<Outlet />
 				<ProfileFunctionalComponent name={'Abhishek Pandya'} />
 				<ProfileClassComponent name={'First'} />
