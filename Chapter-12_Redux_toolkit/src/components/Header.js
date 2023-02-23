@@ -3,11 +3,14 @@ import { Link } from 'react-router-dom';
 import useNetwork from '../utils/useNetwork';
 import Logo from '../../assets/img/logo1.png';
 import UserContext from '../utils/userContext';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
 	const [isLoggedIn, setIsLoggedIn] = useState(true);
 	const isOnline = useNetwork();
 	const { user } = useContext(UserContext);
+
+	const cartItems = useSelector((store) => store.cart.items);
 
 	return (
 		<header className="flex justify-between items-center">
@@ -34,7 +37,10 @@ const Header = () => {
 						<Link to="/instamart">Instamart</Link>
 					</li>
 					<li>
-						<Link to="/">Cart</Link>
+						<Link to="/cart">
+							Cart{' '}
+							{cartItems.length ? <span> - {cartItems.length} items</span> : ''}
+						</Link>
 					</li>
 				</ul>
 				<div className="cursor-pointer">{isOnline ? 'Online' : 'Offline'}</div>
