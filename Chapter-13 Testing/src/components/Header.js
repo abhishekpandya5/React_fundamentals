@@ -15,7 +15,7 @@ const Header = () => {
 	return (
 		<header className="flex justify-between items-center">
 			<Link to="/" className="w-28">
-				<img alt="logo" src={Logo} />
+				<img data-testid="logo" alt="logo" src={Logo} />
 			</Link>
 
 			<div>
@@ -37,13 +37,15 @@ const Header = () => {
 						<Link to="/instamart">Instamart</Link>
 					</li>
 					<li>
-						<Link to="/cart">
+						<Link to="/cart" data-testid="cart">
 							Cart{' '}
 							{cartItems.length ? <span> - {cartItems.length} items</span> : ''}
 						</Link>
 					</li>
 				</ul>
-				<div className="cursor-pointer">{isOnline ? 'Online' : 'Offline'}</div>
+				<div data-testid="online-status" className="cursor-pointer">
+					{isOnline ? 'Online' : 'Offline'}
+				</div>
 				{isLoggedIn ? (
 					<button onClick={() => setIsLoggedIn(false)}>Logout</button>
 				) : (

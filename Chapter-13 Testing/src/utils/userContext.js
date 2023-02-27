@@ -1,8 +1,10 @@
 import { createContext } from 'react';
 
 const UserContext = createContext({
-	name: 'Abhishek',
-	email: 'abhishek@gmail.com'
+	user: {
+		name: 'dummy',
+		email: 'dummy@gmail.com'
+	}
 });
 
 UserContext.displayName = 'UserContext';

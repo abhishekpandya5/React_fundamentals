@@ -27,12 +27,13 @@ const RestaurantMenu = () => {
 				<h2>{name}</h2>
 				<h3>{locality}</h3>
 			</div>
-			<ul>
+			<ul data-testid="restaurant-menu">
 				{Object.values(restaurantInfo.menu.items).map((item) => (
 					<li key={item.id}>
 						{item.name} -
 						<button
 							className="bg-green-300 p-2 m-2 border border-green-500 rounded-md"
+							data-testid="add-btn"
 							onClick={() => handleAddItem(item)}
 						>
 							Add

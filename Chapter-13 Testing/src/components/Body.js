@@ -49,6 +49,7 @@ const Body = () => {
 			<form className="search-container my-5 bg-blue-200">
 				<input
 					type="text"
+					data-testid="search-input"
 					className="search-input px-4 py-1 m-2 border-blue-300 outline-none shadow-sm rounded"
 					placeholder="Search"
 					value={searchText}
@@ -56,6 +57,7 @@ const Body = () => {
 				/>
 				<button
 					type="submit"
+					data-testid="search-btn"
 					className="search-btn px-4 py-1 m-2 border-solid border-2 border-blue-300 rounded"
 					onClick={handleSearchSubmit}
 				>
@@ -84,7 +86,10 @@ const Body = () => {
 					}
 				/>
 			</form>
-			<div className="restaurant-list flex justify-around flex-wrap">
+			<div
+				className="restaurant-list flex justify-around flex-wrap"
+				data-testid="restaurant-list"
+			>
 				{allRestaurants?.length === 0 ? (
 					Array(15)
 						.fill('')

@@ -18,7 +18,10 @@ const Cart = () => {
 			>
 				Clear Cart
 			</button>
-			<div className="flex flex-wrap justify-around px-8 gap-5">
+			<div
+				className="flex flex-wrap justify-around px-8 gap-5"
+				data-testid="cart-items"
+			>
 				{cartItems.map((item) => (
 					<CartItem key={item.id} {...item} />
 				))}

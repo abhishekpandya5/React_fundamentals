@@ -19,12 +19,12 @@ const About = lazy(() => import('./components/About'));
 
 const App = () => {
 	const [user, setUser] = useState({
-		name: 'Abhishek_Pandya',
-		email: 'Abhishek_Pandya@gamail.com'
+		name: 'Abhishek Pandya',
+		email: 'abhishekpandya@gamail.com'
 	});
 	return (
 		<Provider store={store}>
-			<UserContext.Provider value={{ user, setUser }}>
+			<UserContext.Provider value={{ user: user, setUser }}>
 				<Header />
 				<Outlet />
 				<Footer />
