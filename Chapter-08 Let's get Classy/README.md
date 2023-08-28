@@ -3,6 +3,7 @@
 
 > We cannot create class component without a render method.
 
+First constructor is called, then render method
 ---
 > What is render method? 
 render() method returns some JSX.
@@ -25,10 +26,16 @@ render() method returns some JSX.
 1. `Render phase` - Pure and has no side effects
 2. `Commit phase` - Can work with DOM, run side effects
 
-When there are two children, react tries to batch the render phase and calls `constructor`  & `render` method of both child to load the initial HTML to the page.
+`Render phase` has constructor and render
+In the `commit phase` react is actually updating the dom and componentDidMount is called.
+
+When there are two children, react tries to batch the render phase and calls `constructor`  & `render` method of both child to load the initial HTML to the page. Then commit phase is called.
 
 ### `Render phase is fast`
 First completes the render phase of all child
+
+![image](https://github.com/abhishekpandya5/React_fundamentals/assets/30802411/252f0eb5-46bd-43a9-9908-a9bb5e430bce)
+
 
 ---
 
