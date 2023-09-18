@@ -53,6 +53,16 @@ When we make a api call inisde `componentDidMount`, our DOM is already mounted a
 ### why super props constructor?
 > super(props) is called to call the parent constructor i.e., Component constructor
 > By extending React.Component class , we able to use the life cycle of the Component which can be used for mounting, updating and unmounting.
+> Super() vs Super(props)
+ - When we miss passing props inside 'super(),' it won’t assign props to this context and will be 'undefined' inside the constructor.
+ - React under the hood
+   ```
+   const instance = new DefinedComponent(props);
+   instance.props = props;
+   ```
+ - So, even if we don’t pass props to super(). React will still assign them right afterward. That’s why it works inside the render method and not in the constructor.
+ - When you pass props to the 'super()' method in the constructor, the main difference will be accessing 'this.props' inside the constructor method.
+
 
 ---
 ### Why can i make componentDidMount async and not useEffect?
