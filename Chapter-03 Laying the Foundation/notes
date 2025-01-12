@@ -1,5 +1,11 @@
 JSX - Javascript syntax.  html like syntax
 
+JS engine understands EcmaScript (pure javascript)
+
+JSX (transpiled before reaches the JS) -Parcel - Babel
+
+JSX => Babel transpiles it to React.createElement => React Element => JS Object => HTML Element
+
 1. JSX can only have 1 parent.
 2. react Fragment is a component. It is like a empty tag.
 
